@@ -22,8 +22,8 @@ public class Main {
             String userJson = "{'age': 30, 'name': 'Valera', 'email': 'Valera@gmail.com'}";
 
             Gson gson = new Gson();
-            gson.fromJson(userJson, User.class);
-
+            User user_des = gson.fromJson(userJson, User.class);
+            System.out.println(user_des);
         }
 }
 
