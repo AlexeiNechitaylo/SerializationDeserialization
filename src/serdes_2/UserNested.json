@@ -1,0 +1,11 @@
+{
+"age": 25,
+"name": "Ibrahim",
+"email": "Ibrahim@gmail.com",
+"userAddress": {
+	"street": "Pobedy",
+	"houseNumber": "10",
+	"city": "Luninets",
+	"country": "Belarus"
+	}
+}
