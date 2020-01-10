@@ -1,8 +1,12 @@
 import serdes.User;
 
 import com.google.gson.Gson;
+import serdes_arrays_lists.Restaurant;
 import serdes_nested.UserAddress;
 import serdes_nested.UserNested;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -10,9 +14,12 @@ public class Main {
 
         serializeUser();
         deserializeUser();
+
         serializationUserNested();
         deserializeUserNested();
 
+        serializeRestaurant();
+        //deserializeRestaurant();
         }
 
         private static void serializeUser() {
@@ -46,6 +53,19 @@ public class Main {
             Gson gson = new Gson();
             UserNested userNested_des = gson.fromJson(userNestedJson, UserNested.class);
             System.out.println(userNested_des);
+        }
+
+        private static void serializeRestaurant(){
+            List<Restaurant.RestaurantMenuItem> menuItems = new ArrayList<>();
+            menuItems.add(new Restaurant.RestaurantMenuItem("Steak", 20f));
+            menuItems.add(new Restaurant.RestaurantMenuItem("Spaghetti", 5f));
+            menuItems.add(new Restaurant.RestaurantMenuItem("Pizza", 15f));
+
+            Restaurant restaurant = new Restaurant("DANTE", menuItems);
+
+            Gson gson = new Gson();
+            String json_3 = gson.toJson(restaurant);
+            System.out.println(json_3);
         }
 }
 
