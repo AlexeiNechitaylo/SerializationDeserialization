@@ -1,4 +1,4 @@
-package serdes_1;
+package serdes;
 
 public class User {
     private int age;

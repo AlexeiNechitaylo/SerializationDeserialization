@@ -1,8 +1,8 @@
-import serdes_1.User;
+import serdes.User;
 
 import com.google.gson.Gson;
-import serdes_2.UserAddress;
-import serdes_2.UserNested;
+import serdes_nested.UserAddress;
+import serdes_nested.UserNested;
 
 public class Main {
 
@@ -11,6 +11,7 @@ public class Main {
         serializeUser();
         deserializeUser();
         serializationUserNested();
+        deserializeUserNested();
 
         }
 
@@ -31,12 +32,20 @@ public class Main {
         }
 
         private static void serializationUserNested(){
-            UserAddress userAddress = new UserAddress("Pobedy", "10","Luninets", "Belarus");
+            UserAddress userAddress = new UserAddress("Pobedy", "3","Luninets", "Belarus");
             UserNested userNested = new UserNested(25, "Jane", "Jane@gmail.com", userAddress);
 
             Gson gson = new Gson();
             String json_2 = gson.toJson(userNested);
             System.out.println(json_2);
+        }
+
+        private static void deserializeUserNested(){
+            String userNestedJson = "{\"age\":25,\"name\":\"Jane\",\"email\":\"Jane@gmail.com\",\"userAddress\":{\"street\":\"Pobedy\",\"houseNumber\":\"10\",\"city\":\"Luninets\",\"country\":\"Belarus\"}}";
+
+            Gson gson = new Gson();
+            UserNested userNested_des = gson.fromJson(userNestedJson, UserNested.class);
+            System.out.println(userNested_des);
         }
 }
 

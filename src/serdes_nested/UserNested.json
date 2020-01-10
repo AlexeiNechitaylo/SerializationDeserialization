@@ -1,0 +1,11 @@
+{
+"age": 25,
+"name": "Grisha",
+"email": "Grisha@gmail.com",
+"userAddress": {
+	"street": "Nezavisimosti",
+	"houseNumber": "10",
+	"city": "Zhlobin",
+	"country": "Belarus"
+	}
+}
