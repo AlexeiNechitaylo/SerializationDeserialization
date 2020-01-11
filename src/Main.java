@@ -1,6 +1,7 @@
 import serdes.User;
 
 import com.google.gson.Gson;
+import serdes_arrays_lists.Founder;
 import serdes_arrays_lists.Restaurant;
 import serdes_nested.UserAddress;
 import serdes_nested.UserNested;
@@ -14,12 +15,12 @@ public class Main {
 
         serializeUser();
         deserializeUser();
-
+        //Nested
         serializationUserNested();
         deserializeUserNested();
-
+        //Arrays and Lists
         serializeRestaurant();
-        //deserializeRestaurant();
+        deserializeFS();
         }
 
         private static void serializeUser() {
@@ -66,6 +67,15 @@ public class Main {
             Gson gson = new Gson();
             String json_3 = gson.toJson(restaurant);
             System.out.println(json_3);
+        }
+
+        private static void deserializeFS(){
+            String FSjson = "[{\"name\": \"Christian\",\"flowerCount\": 1},{\"name\": \"Marcus\",\"flowerCount\": 3},{\"name\": \"Norman\",\"flowerCount\": 2}]";
+
+            Gson gson = new Gson();
+            //Founder[] founders_array = gson.fromJson(FSjson, Founder[].class);
+            List<Founder> founders_list = new Gson().fromJson(FSjson, List<Founder>)
+
         }
 }
 
