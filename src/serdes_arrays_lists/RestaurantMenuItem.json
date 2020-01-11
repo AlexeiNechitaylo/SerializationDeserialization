@@ -1,0 +1,19 @@
+{
+  "name": "DANTE",
+  "items": [
+    {
+      "name": "Steak",
+      "price": 20.0
+    },
+    {
+      "name": "Spaghetti",
+      "price": 5.0
+    },
+    {
+      "name": "Pizza",
+      "price": 15.0
+    }
+  ]
+}
+
+//reformat json: ctrl+alt+l
