@@ -2,6 +2,7 @@ import serdes.User;
 
 import com.google.gson.Gson;
 import serdes_arrays_lists.Founder;
+import serdes_arrays_lists.GeneralInfo;
 import serdes_arrays_lists.Restaurant;
 import serdes_nested.UserAddress;
 import serdes_nested.UserNested;
@@ -74,8 +75,29 @@ public class Main {
 
             Gson gson = new Gson();
             //Founder[] founders_array = gson.fromJson(FSjson, Founder[].class);
-            List<Founder> founders_list = new Gson().fromJson(FSjson, List<Founder>)
+            //List<Founder> founders_list = new Gson().fromJson(FSjson, List<Founder>);
 
+            String generalinfo = "{\n" +
+                    "  \"name\": \"Roga i kopita\",\n" +
+                    "  \"website\": \"\",\n" +
+                    "  \"founders\": [\n" +
+                    "    {\n" +
+                    "      \"name\": \"Christian\",\n" +
+                    "      \"flowerCount\": \"1\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"name\": \"Marcus\",\n" +
+                    "      \"flowerCount\": \"3\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"name\": \"Norman\",\n" +
+                    "      \"flowerCount\": \"2\"\n" +
+                    "    }\n" +
+                    "  ]\n" +
+                    "}";
+
+            GeneralInfo g_info = gson.fromJson(generalinfo, GeneralInfo.class);
+            System.out.println(g_info);
         }
 }
 
